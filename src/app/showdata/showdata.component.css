@@ -1,0 +1,27 @@
+/* styles.css */
+
+button {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  table, th, td {
+    border: 1px solid black;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  /* Additional styles for the "yes" paragraph */
+  p {
+    font-weight: bold;
+    color: green;
+  }
+  

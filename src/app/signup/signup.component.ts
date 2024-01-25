@@ -15,6 +15,7 @@ export class SignupComponent {
   userForm: FormGroup;
   mydata:any
   url = "http://localhost:8000/"
+  display :any ={}
   constructor(private httpclient:HttpClient){
 
   }
@@ -29,6 +30,7 @@ export class SignupComponent {
   onSubmit() {
     if (this.userForm.valid) {
       const formData = this.userForm.value;
+      this.display=this.userForm.value
       console.log(formData)
     
       // Send a POST request with the form data
@@ -59,15 +61,5 @@ export class SignupComponent {
       }
     });
   }
-  getData(){
-    this.httpclient.get(this.url+'getData').subscribe({
-      next :(data)=>{
-      
-      console.log(data)
-      this.mydata=data
-    },
-     error :(err)=>{
-      console.log(err)
-     }})
-  }
+  
 }

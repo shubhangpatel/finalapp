@@ -70,6 +70,24 @@ app.get("/getData",(req,res)=>{
      }
    });
  });
+ app.put('/updateData/:email', (req, res) => {
+  const userEmail = req.params.email;
+  const updatedData = req.body;
+
+  const updateQuery = 'UPDATE useri SET firstName=?, lastName=?, email=?, age=? WHERE email=?';
+  const updateValues = [updatedData.firstName, updatedData.lastName, updatedData.email, updatedData.age, userEmail];
+
+  mysqlconnection.conn.query(updateQuery, updateValues, (err, result) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send(err);
+    } else {
+      console.log('Data updated successfully');
+      res.status(200).json({ message: 'Data updated successfully' });
+    }
+  });
+});
+
  
 app.listen(8000,()=>{
     console.log(`server is running in port no 8000`)

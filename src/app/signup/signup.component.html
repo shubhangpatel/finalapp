@@ -42,15 +42,7 @@
     <button type="submit">Submit</button>
   </form>
   
-  <button (click)="getData()">Get Data</button>
-
-  <table border="1">
-  @for(item of mydata;track item)
-  {
-    <span>{{item.firstName}}</span>
-    <span>{{item.lastName}}</span>
-    <span>{{item.email}}</span>
-    <span>{{item.age}}</span>
-  }
- 
+  <section>
+    <span>name:{{display.firstName}}</span>
+  </section>
   
